@@ -21,10 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<FloatingActionButton>(R.id.fabActivityMain)
-
-        button.setOnLongClickListener(View.OnLongClickListener {
-            button.setImageResource(R.drawable.ic_launcher_background)
+        fabActivityMain.setOnLongClickListener(View.OnLongClickListener {
+            fabActivityMain.setImageResource(R.drawable.ic_launcher_background)
             true    // 戻り値をtrueにするとOnClickイベントは発生しない
         })
     }
