@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // 長押しでアイコンを変更
         fabActivityMain.setOnLongClickListener(View.OnLongClickListener {
             if (fabActivityMain.drawable.constantState.equals(resources.getDrawable(R.drawable.ic_vertical_align_bottom_black_24dp).constantState)) {
                 Log.d(TAG, "match")
@@ -32,5 +33,14 @@ class MainActivity : AppCompatActivity() {
             }
             true    // 戻り値をtrueにするとOnClickイベントは発生しない
         })
+
+        // アイコンの状態で動作を変更
+        fabActivityMain.setOnClickListener {
+            if (fabActivityMain.drawable.constantState.equals(resources.getDrawable(R.drawable.ic_vertical_align_bottom_black_24dp).constantState)) {
+                Log.d(TAG, "Insert to bottom")
+            } else {
+                Log.d(TAG, "Insert to Top")
+            }
+        }
     }
 }
